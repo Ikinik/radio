@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>test ajax verification</title>
+  <script type="text/javascript" src="assets/js/jquery.js"></script>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		var logged = false;
+		var respond = $.ajax({
+			method: 'POST',
+			url: 'auth/listener_joined.php',
+			data: {user: 'hackme', pass: 'hackme'},
+			async: false,
+			success: function(data, textStatus, request){
+				var res = request.getResponseHeader('icecast-auth-user');
+				logged = (res == 0)? false : true;
+				console.log("iside: " + logged);
+				console.log(res);
+			}
+		});
+	});
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

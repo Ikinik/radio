@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu&subset=latin-ext,latin);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+body {margin:0; padding:0; overflow: hidden}
+#particle-canvas {width:100%; overflow: hidden}
+#header {position: absolute; margin: 30px 0px 0px 50px; font-family: 'Lobster', cursive; z-index: 200}
+#header h1 {margin: 0px; font-size: 50px; color: white}
+#header h1 span:hover {cursor: hand; cursor: pointer}
+
+/* play button styling */
+#play {display: block; position: absolute; z-index: 201; width: 86px; height: 86px; margin: 250px 0px 0px 625px; border-radius: 46px; overflow: hidden; cursor: hand; cursor: pointer; background-position: center center;
+animation-name: bluePulse; animation-duration: 3s; animation-iteration-count: infinite;
+-webkit-animation-name: bluePulse; -webkit-animation-duration: 3s; -webkit-animation-iteration-count: infinite;}
+#play.resized {cursor: default}
+#arrow {position: absolute; display: block; width: 60px; height: 64px; margin: 11px 0px 0px 20px; background: url('../img/parts/arrow.png') center center no-repeat}
+
+#loginform {padding: 11px 11px 11px 11px; opacity: 0; font-family: 'Ubuntu'; color: white}
+#loginform input.inp {display: block; height: 20px; padding: 2px 1px 1px 5px; border-width: 1px; border-style: solid; border-color: #cccccc; font-size: 14px; color: white; background-color: rgba(0,0,0,0.5); border-radius: 3px}
+#loginform input#uname.inp {width: 155px}
+#loginform input#pass.inp {width: 136px; float: left; border-width: 1px 0px 1px 1px; border-radius: 3px 0px 0px 3px}
+#loginform input#uname.inp:-ms-input-placeholder:focus {color: red}
+#loginform input#submit {display: block; width: 20px; height: 25px; border-width: 1px 1px 1px 0px; border-style: solid; border-color: #cccccc; background: rgba(0,0,0,0.5) url('../img/parts/passwd-arrow.png') center center no-repeat; border-radius: 0px 3px 3px 0px; cursor: hand; cursor: pointer}
+#loginform input:focus {outline: none !important}
+#loginform #pass-cont {height: 20px; clear: both; margin-top: 4px}
+#loginform #pass-cont::after {content: "."; display: block; width: 1px; height: 1px; visibility: hidden; clear: both}
+
+#rotate-bg {position: absolute; display: block; width: 86px; height: 86px; background: url('../img/parts/gradient-bg.jpg') center center no-repeat;
+border-radius: 45px; overflow: hidden;
+-webkit-animation:spin 3s linear infinite;
+-moz-animation:spin 3s linear infinite;
+animation:spin 3s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@-webkit-keyframes bluePulse { from {-webkit-box-shadow: 0 0 9px #333} 50% {-webkit-box-shadow: 0 0 18px #6f7ff2} to {-webkit-box-shadow: 0 0 9px #333}}
+@keyframes bluePulse { from {box-shadow: 0 0 9px #333} 50% {box-shadow: 0 0 18px #6f7ff2} to {box-shadow: 0 0 9px #333}}
+
+/* rotate effect */
+.flip-container {perspective: 500px; -webkit-perspective: 500px}
+.flipper {transition: 1s; transform-style: preserve-3d; position: relative}
+.front, .back { backface-visibility: hidden; position: absolute; top: 0; left: 0}
+.front {z-index: 2; transform: rotateY(0deg)}
+.back {transform: rotateY(180deg)}
+/*MSIE conditional formating*/
+html[data-useragent*='IE'] .front, html[data-useragent*='IE'] .back {transition: 1s; transform-style: preserve-3d}
+html[data-useragent*='IE'] .back-in {backface-visibility: visible; transform: rotateY(-180deg)}
+
+/* backpage */
+#playpage #nav-bar {display: block; opacity: 0.95}
+#playpage #nav-bar #h-line {display: block; height: 8px; background-color: black}
+#playpage #nav-bar #nav-cont #triangle {display: block; width: 0px; height: 0px; float: right; border-width: 11px; border-style: solid; border-color: black black transparent transparent}
+#playpage #nav-bar #nav-cont #nav {display: block; min-width: 100px; height: 22px; float: right; background-color: black}
+#playpage #nav-bar #nav-cont #nav ul {list-style-type: none}
+#playpage #nav-bar #nav-cont #nav li {display: block; float: left}
+#playpage #nav-bar #nav-cont #nav li a {display: block; margin-top: -2px; padding-left: 7px; padding-right: 7px; border-right: 1px solid white; color: white; font-size: 15px; text-decoration: none; font-family: 'Ubuntu'}
+#playpage #nav-bar #nav-cont #nav li:last-child a {border: none}
+#playpage #nav-bar #nav-cont #nav li a:hover {text-shadow: 0 0 15px white; -webkit-text-shadow: 0 0 15px white}
+
+#playpage #control {position: absolute; display: block; top: 0px; left: 0px; width: 150px; height: 150px}
+#playpage #control #play-but {position: absolute; display: block; visibility: hidden; width: 94px; height: 101px; margin: 24px 0px 0px 38px; background: url('../img/parts/play-stripes.png') left center no-repeat; border-radius: 0px 40px 40px 0px; cursor: hand; cursor: pointer}
+#playpage #control #play-but.stopped {background-position: -93px center}
+#playpage #control input#dial {display: none}
+#playpage #control #loader {display: block; position: absolute; top: 50%; left: 50%; margin-left: -24px; margin-top: -24px; text-align: center}
+#playpage #control #loader .side {background-color: rgba(74,74,74,0.8)}
+
+#playpage #footer {position: absolute; display: block; bottom: 0px; left: 0px; width: 100%; opacity: 0.95}
+#playpage #footer table {width: 100%; border-collapse: collapse; text-align: left}
+
+#playpage #footer table #f-line {display: block; height: 0px; border-width: 22px 0px 8px 22px; border-style: solid; border-color: transparent transparent black black}	  
+#playpage #footer table #fcont {display: table; height: 30px; font-family: 'Ubuntu'; font-size: 15px; color: white; background-color: black}
+#playpage #footer table #fcont #cnt {padding: 5px}

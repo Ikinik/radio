@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pirate Radio</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/supersized.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/loader.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script type="text/javascript" src="assets/js/jquery.js"></script>
+	<script type="text/javascript" src="assets/js/ua-parser.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="assets/js/particle-network.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.animate-shadow-min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.hotkeys.js"></script>
+	<script type="text/javascript" src="assets/js/radio.js"></script>
+  </head>
+  <body>
+    <div class="flip-container">
+	  <div class="flipper">
+		<div class="front">
+		  <div id="header">
+		    <h1><span>#</span><span>p</span><span>i</span><span>r</span><span>a</span><span>t</span><span>e</span><span>R</span><span>a</span><span>d</span><span>i</span><span>o</span></h1>
+		  </div>
+		  <div id="play">
+			<div id="rotate-bg"></div>
+			<div id="arrow"></div>
+		  </div>
+		  <div id="particle-canvas"></div>
+	    </div>
+		<div class="back">
+		<div class="back-in">
+			<div class="page" id="playpage">
+				<div id="nav-bar">
+				  <div id="h-line"></div>
+				  <div id="nav-cont">
+				    <div id="nav">
+					  <ul>
+					    <li><a href="#"><span>O projektu</span></a></li>
+					    <li><a href="#"><span>Jak se připojit</span></a></li>
+					  </ul>
+				    </div>
+					<div id="triangle"></div>
+				  </div>
+				</div>
+				
+				<div id="control">
+					<div id="loader"><div class="loader"><div class="side"></div><div class="side"></div><div class="side"></div><div class="side"></div><div class="side"></div><div class="side"></div><div class="side"></div><div class="side"></div></div></div>
+					<div id="play-but" class="playing"></div>
+					<input type="text" value="0" id="dial">
+				</div>
+				
+				<div id="footer">
+				  <table>
+				    <tr>
+					  <td width="1%"><div id="fcont"><div id="cnt">#pirateRadio</div></div></td>
+					  <td><div id="f-line"></div></td>
+					</tr>
+				  </table>
+				</div>
+			</div>
+			<!-- BACKGROUND SLIDESHOW -->
+			<div id="supersized-loader"></div>
+			<ul id="supersized"></ul>
+		</div>
+		</div>
+	  </div>
+	</div>
+  </body>
+</html>
